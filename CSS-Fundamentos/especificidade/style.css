@@ -1,0 +1,19 @@
+#azul {
+    color: hsl(240, 100%, 50%);
+}
+
+h1[class="verde"] {
+    color: rgb(19, 163, 93);
+}
+
+.verde {
+    color: #0f0;
+}
+
+body > h1 {
+    color: #ff87aa !important;
+}
+
+h1 {
+    color: #f00 !important;
+}
