@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="index.js"></script>
+		<title>Exercicio 01 - Escalação</title>
+	</head>
+	<body>
+		<h1>Escalação do Time</h1>
+		<hr />
+
+		<h2>Escalar Jogador</h2>
+		<div>
+			<label for="position">Posição</label>
+			<input type="text" name="position" id="position" required />
+			<label for="name">Nome</label>
+			<input type="text" name="name" id="name" required />
+			<label for="jersey-number">Camisa N°</label>
+			<input
+				type="number"
+				name="jersey-number"
+				id="jersey-number"
+				required
+			/>
+			<button type="button" onclick="addPlayer()">Escalar</button>
+		</div>
+		<h2>Remover Jogador</h2>
+		<div>
+			<label for="numberToRemove">Número:</label>
+			<input type="number" id="numberToRemove" />
+			<button onclick="removePlayer()">Remover</button>
+		</div>
+		<ul id="team-lineup"></ul>
+	</body>
+</html>
