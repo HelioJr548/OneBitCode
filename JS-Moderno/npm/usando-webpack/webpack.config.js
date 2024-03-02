@@ -2,13 +2,16 @@ const path = require("path");
 
 module.exports = {
 	entry: {
-        //  A chave será o nome do arquivo gerado, podem ser qualquer nome
-		main: "./src/index.js", 
-        hello: "./src/hello.js"
+		//  A chave será o nome do arquivo gerado, podem ser qualquer nome
+		index: "./src/index.js",
 	},
 	mode: "development", //  Muda o modo de webpack
-	output: {
-		path: path.resolve(__dirname, "public"), // diretorio onde o arquivo ficara, "public" será a pasta
-		filename: "[name].bundle.min.js", // Altera nome do arquivo final
+	module: {
+		rules: [
+			{
+				test: /\.css$/, //expressao regular, pesquisa todos arquivos que terminam com .css
+				use: ["style-loader", "css-loader"], // loaders que serão utilizados
+			},
+		],
 	},
 };
