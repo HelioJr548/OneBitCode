@@ -1,4 +1,4 @@
-const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
 	entry: {
@@ -10,8 +10,11 @@ module.exports = {
 		rules: [
 			{
 				test: /\.css$/, //expressao regular, pesquisa todos arquivos que terminam com .css
-				use: ["style-loader", "css-loader"], // loaders que serão utilizados
+				use: [MiniCssExtractPlugin.loader, "css-loader"], // loaders que serão utilizados
 			},
 		],
 	},
+	plugins: [
+		new MiniCssExtractPlugin()
+	],
 };
