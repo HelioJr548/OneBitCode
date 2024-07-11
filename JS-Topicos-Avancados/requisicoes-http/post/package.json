@@ -1,0 +1,12 @@
+{
+  "name": "post",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "json-server": "json-server db.json"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^1.0.0-beta.1"
+  }
+}
