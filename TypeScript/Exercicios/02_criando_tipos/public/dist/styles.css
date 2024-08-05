@@ -1,0 +1,111 @@
+:root {
+    --background-color: #000807;
+    --text-color: black;
+    --main-bg-color: #e7e7e7;
+    --form-bg-color: #F5F5F5;
+    --button-bg-color: #1E90FF;
+    --button-hover-color: #104E8B;
+    --border-color: #000807;
+    --list-item-bg-color: #F5F5F5;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    background-color: var(--background-color);
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  h1, h2 {
+    text-align: center;
+    color: var(--text-color);
+  }
+  
+  .main-container {
+    background-color: var(--main-bg-color);
+    border-radius: 25px;
+    display: flex;
+    padding: 20px;
+    height: 500px;
+    width: 1024px;
+    gap: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  .forms {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  form {
+    background-color: var(--form-bg-color);
+    border-radius: 5px;
+    display: grid;
+    gap: 5px;
+    padding: 20px;
+    justify-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  input, select, button {
+    padding: 5px;
+    width: 100%;
+  }
+  
+  button {
+    background-color: var(--button-bg-color);
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  button:hover {
+    background-color: var(--button-hover-color);
+  }
+  
+  .planets {
+    width: 40%;
+    height: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .planets > h1 {
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 5px;
+    color: var(--text-color);
+  }
+  
+  #planet-list {
+    background-color: var(--list-item-bg-color);
+    flex-grow: 1;
+    font-size: 1rem;
+    overflow-y: auto;
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra interna */
+  }
+  
+  #planet-list div {
+    background-color: var(--list-item-bg-color);
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  }
+  

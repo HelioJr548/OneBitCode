@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Planet Registry</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="main-container">
+				<div class="forms">
+					<form id="register-form">
+						<h2>Register a New Planet</h2>
+						<input
+							type="text"
+							id="planet-name"
+							placeholder="Planet Name"
+							required
+						/>
+						<input
+							type="text"
+							id="planet-coordinates"
+							placeholder="Coordinates (comma separated)"
+							required
+						/>
+						<select id="planet-situation" required>
+							<option value="" disabled selected>
+								Select Situation
+							</option>
+							<option value="Inhabited">Inhabited</option>
+							<option value="Livable">Livable</option>
+							<option value="Uninhabitable">Uninhabitable</option>
+							<option value="Unexplored">Unexplored</option>
+						</select>
+						<button type="submit">Register Planet</button>
+					</form>
+
+					<form id="update-situation-form">
+						<h2>Update Planet Situation</h2>
+						<input
+							type="text"
+							id="update-planet-name"
+							placeholder="Planet Name"
+							required
+						/>
+						<select id="update-planet-situation" required>
+							<option value="" disabled selected>
+								Select New Situation
+							</option>
+							<option value="Inhabited">Inhabited</option>
+							<option value="Livable">Livable</option>
+							<option value="Uninhabitable">Uninhabitable</option>
+							<option value="Unexplored">Unexplored</option>
+						</select>
+						<button type="submit">Update Situation</button>
+					</form>
+
+					<form id="add-satellite-form">
+						<h2>Add Satellite</h2>
+						<input
+							type="text"
+							id="satellite-planet-name"
+							placeholder="Planet Name"
+							required
+						/>
+						<input
+							type="text"
+							id="satellite-name"
+							placeholder="Satellite Name"
+							required
+						/>
+						<button type="submit">Add Satellite</button>
+					</form>
+
+					<form id="remove-satellite-form">
+						<h2>Remove Satellite</h2>
+						<input
+							type="text"
+							id="remove-satellite-planet-name"
+							placeholder="Planet Name"
+							required
+						/>
+						<input
+							type="text"
+							id="remove-satellite-name"
+							placeholder="Satellite Name"
+							required
+						/>
+						<button type="submit">Remove Satellite</button>
+					</form>
+				</div>
+
+				<div class="planets">
+					<h1>Planet List</h1>
+					<div id="planet-list"></div>
+				</div>
+			</div>
+		</div>
+
+		<script src="index.js"></script>
+	</body>
+</html>
