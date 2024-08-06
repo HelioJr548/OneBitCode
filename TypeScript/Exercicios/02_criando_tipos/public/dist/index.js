@@ -4,7 +4,9 @@ function findPlanet(planetName) {
     return planets.find((planet) => planet.name === planetName);
 }
 function registerPlanet(name, coordinatesStr, situation) {
-    const coordinates = coordinatesStr.split(',').map(Number);
+    const coordinates = coordinatesStr
+        .split(',')
+        .map(Number);
     const planet = findPlanet(name);
     if (planet) {
         alert(`Planet already registered`);
@@ -72,26 +74,30 @@ function listPlanets() {
         planetListElement.appendChild(planetElement);
     });
 }
-(_a = document.getElementById('register-form')) === null || _a === void 0 ? void 0 : _a.addEventListener('submit', (event) => {
+(_a = document
+    .getElementById('register-form')) === null || _a === void 0 ? void 0 : _a.addEventListener('submit', (event) => {
     event.preventDefault();
     const name = document.getElementById('planet-name').value;
     const coordinates = document.getElementById('planet-coordinates').value;
     const situation = document.getElementById('planet-situation').value;
     registerPlanet(name, coordinates, situation);
 });
-(_b = document.getElementById('update-situation-form')) === null || _b === void 0 ? void 0 : _b.addEventListener('submit', (event) => {
+(_b = document
+    .getElementById('update-situation-form')) === null || _b === void 0 ? void 0 : _b.addEventListener('submit', (event) => {
     event.preventDefault();
     const name = document.getElementById('update-planet-name').value;
     const newSituation = document.getElementById('update-planet-situation').value;
     updatePlanetSituation(name, newSituation);
 });
-(_c = document.getElementById('add-satellite-form')) === null || _c === void 0 ? void 0 : _c.addEventListener('submit', (event) => {
+(_c = document
+    .getElementById('add-satellite-form')) === null || _c === void 0 ? void 0 : _c.addEventListener('submit', (event) => {
     event.preventDefault();
     const name = document.getElementById('satellite-planet-name').value;
     const satellite = document.getElementById('satellite-name').value;
     addPlanetSatellite(name, satellite);
 });
-(_d = document.getElementById('remove-satellite-form')) === null || _d === void 0 ? void 0 : _d.addEventListener('submit', (event) => {
+(_d = document
+    .getElementById('remove-satellite-form')) === null || _d === void 0 ? void 0 : _d.addEventListener('submit', (event) => {
     event.preventDefault();
     const name = document.getElementById('remove-satellite-planet-name').value;
     const satellite = document.getElementById('remove-satellite-name').value;

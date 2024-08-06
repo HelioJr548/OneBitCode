@@ -21,12 +21,9 @@ function registerPlanet(
 	coordinatesStr: string,
 	situation: PlanetSituation
 ): void {
-	const coordinates = coordinatesStr.split(',').map(Number) as [
-		number,
-		number,
-		number,
-		number
-	];
+	const coordinates = coordinatesStr
+		.split(',')
+		.map(Number) as PlanetCoordinates;
 
 	const planet = findPlanet(name);
 	if (planet) {
@@ -125,34 +122,64 @@ function listPlanets() {
 }
 
 // Add event listeners for form submissions
-document.getElementById('register-form')?.addEventListener('submit', (event) => {
-	event.preventDefault();
-	const name = (document.getElementById('planet-name') as HTMLInputElement).value;
-	const coordinates = (document.getElementById('planet-coordinates') as HTMLInputElement).value;
-	const situation = (document.getElementById('planet-situation') as HTMLSelectElement).value as PlanetSituation;
-	registerPlanet(name, coordinates, situation);
-});
+document
+	.getElementById('register-form')
+	?.addEventListener('submit', (event) => {
+		event.preventDefault();
+		const name = (
+			document.getElementById('planet-name') as HTMLInputElement
+		).value;
+		const coordinates = (
+			document.getElementById('planet-coordinates') as HTMLInputElement
+		).value;
+		const situation = (
+			document.getElementById('planet-situation') as HTMLSelectElement
+		).value as PlanetSituation;
+		registerPlanet(name, coordinates, situation);
+	});
 
-document.getElementById('update-situation-form')?.addEventListener('submit', (event) => {
-	event.preventDefault();
-	const name = (document.getElementById('update-planet-name') as HTMLInputElement).value;
-	const newSituation = (document.getElementById('update-planet-situation') as HTMLSelectElement).value as PlanetSituation;
-	updatePlanetSituation(name, newSituation);
-});
+document
+	.getElementById('update-situation-form')
+	?.addEventListener('submit', (event) => {
+		event.preventDefault();
+		const name = (
+			document.getElementById('update-planet-name') as HTMLInputElement
+		).value;
+		const newSituation = (
+			document.getElementById(
+				'update-planet-situation'
+			) as HTMLSelectElement
+		).value as PlanetSituation;
+		updatePlanetSituation(name, newSituation);
+	});
 
-document.getElementById('add-satellite-form')?.addEventListener('submit', (event) => {
-	event.preventDefault();
-	const name = (document.getElementById('satellite-planet-name') as HTMLInputElement).value;
-	const satellite = (document.getElementById('satellite-name') as HTMLInputElement).value;
-	addPlanetSatellite(name, satellite);
-});
+document
+	.getElementById('add-satellite-form')
+	?.addEventListener('submit', (event) => {
+		event.preventDefault();
+		const name = (
+			document.getElementById('satellite-planet-name') as HTMLInputElement
+		).value;
+		const satellite = (
+			document.getElementById('satellite-name') as HTMLInputElement
+		).value;
+		addPlanetSatellite(name, satellite);
+	});
 
-document.getElementById('remove-satellite-form')?.addEventListener('submit', (event) => {
-	event.preventDefault();
-	const name = (document.getElementById('remove-satellite-planet-name') as HTMLInputElement).value;
-	const satellite = (document.getElementById('remove-satellite-name') as HTMLInputElement).value;
-	removePlanetSatellite(name, satellite);
-});
+document
+	.getElementById('remove-satellite-form')
+	?.addEventListener('submit', (event) => {
+		event.preventDefault();
+		const name = (
+			document.getElementById(
+				'remove-satellite-planet-name'
+			) as HTMLInputElement
+		).value;
+		const satellite = (
+			document.getElementById('remove-satellite-name') as HTMLInputElement
+		).value;
+		removePlanetSatellite(name, satellite);
+	});
 
 // Initial list of planets
 listPlanets();
