@@ -1,0 +1,13 @@
+{
+  "name": "03_criando_interfaces",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./public/dist/index.js",
+    "build": "tsc -W"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
