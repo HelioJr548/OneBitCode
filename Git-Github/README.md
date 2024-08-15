@@ -27,3 +27,4 @@ Todo este repositório doi criado através de CLIs no terminal.
 * `git diff` - Mostra diferenças caso arquivos forem modificados
 * `git merge <nome-branch>` - Funde uma branch com outra
 * `git push origin main` - Enviar commits para o repositório central
+* `git pull origin main` - Traz alterações para repositório local
