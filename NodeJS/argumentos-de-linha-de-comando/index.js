@@ -2,7 +2,7 @@ const args = process.argv;
 
 const namedArguments = {};
 
-process.argv.slice(2).forEach((arg, index, array) => {
+args.slice(2).forEach((arg, index, array) => {
 	if (arg.startsWith('--')) {
 		const argName = arg.slice(2);
 		const argValue = array[index + 1];
@@ -12,3 +12,4 @@ process.argv.slice(2).forEach((arg, index, array) => {
 
 console.log(`Argumentos Informados: `, namedArguments);
 console.log(namedArguments);
+console.log(args);
