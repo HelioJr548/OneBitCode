@@ -6,3 +6,9 @@ const server = http.createServer((request, response) => {
 	response.write('Servidor HTTP em Node.js funcionando!');
 	response.end();
 });
+
+const PORT = 3000
+
+server.listen(PORT, () => {
+  console.log(`Servidor rodando em <http://localhost>:${PORT}/`)
+})
