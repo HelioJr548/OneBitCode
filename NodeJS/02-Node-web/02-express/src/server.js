@@ -8,6 +8,10 @@ server.get('/', (request, response) => {
 	);
 });
 
+server.get('/artigos', (req, res) => {
+	res.send('Você está na página "artigos".')
+  })
+
 const PORT = 3000;
 
 server.listen(PORT, () => {
