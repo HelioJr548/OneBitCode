@@ -1,0 +1,16 @@
+const express = require('express');
+const taskListController = require('./controllers/taskListController');
+const router = express.Router();
+
+router.get('/', (req, res) => res.render('index'));
+
+router.get('/app', taskListController.index);
+router.get('/app/nova-lista', taskListController.create);
+router.get('/app/:id', taskListController.show);
+
+router.post('/app/nova-lista', taskListController.save);
+router.post('/app/:id/nova-tarefa', taskListController.addTask);
+router.post('/app/:id/excluir', taskListController.delete);
+router.post('/app/:listId/atualizar-status/:taskId', taskListController.updateTaskStatus);
+
+module.exports = router;
