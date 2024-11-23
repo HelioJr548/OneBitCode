@@ -10,6 +10,8 @@ app.get('/games/:id', gamesController.show);
 app.post('/games', gamesController.save);
 app.post('/games/:id/genres', gamesController.addGenre);
 app.put('/games/:id', gamesController.update);
+app.delete('/games/:id', gamesController.delete);
+app.delete('/games/:id/genres/:name', gamesController.removeGenre);
 
 app.listen(port, () =>
 	console.log('> Server is up and running on port : ' + port)
