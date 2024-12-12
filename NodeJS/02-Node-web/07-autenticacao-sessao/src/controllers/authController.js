@@ -24,6 +24,9 @@ module.exports = {
 		const newUser = { username, password };
 		users.push(newUser);
 
+		req.session.authenticated = true;
+		req.session.currentUser = newUser;
+
 		res.status(201).redirect('/dashboard');
 	},
 
@@ -41,8 +44,15 @@ module.exports = {
 			return res.status(404).redirect('/');
 		}
 
+		req.session.authenticated = true;
+		req.session.currentUser = user;
+
 		res.redirect('/dashboard');
 	},
 
 	// GET /auth/logout
+	logout: (req, res) => {
+		req.session.destroy();
+		res.redirect('/');
+	},
 };
