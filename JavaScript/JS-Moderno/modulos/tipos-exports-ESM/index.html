@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tipos de Export ESM</title>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<h1>Tipos de Export ESM</h1>
+
+		<p>
+			Nos ES Modules existem diferentes formas de se realizar o processo
+			de importação e exportação. Eles podem ser divididos da seguinte
+			forma:
+		</p>
+		<ul>
+			<li>
+				<b>Export Nomeado:</b> o nome da variável/função exportada deve
+				ser o mesmo na hora da importação. A importação é sempre feita
+				com `import { ... } from 'path/to/file'` (com chaves). A
+				exportação pode ser feita de duas formas:
+				<ul>
+					<li>
+						- Inline: na mesma linha da declaração da
+						variável/função, utilizando `export const ...` ou
+						`export function ...`.
+					</li>
+					<li>
+						- Não-inline: após a declaração da variável/função e
+						utilizando `export { ... }` (com chaves).
+					</li>
+				</ul>
+			</li>
+			<p>
+				<i>Obs.</i>: o export nomeado pode ser renomeado para evitar
+				conflitos de nome utilizando o “as” na importação* `import {
+				moduleA as newName } from './moduleA'`
+			</p>
+			<li>
+				<b>Export Default:</b> o nome da variável/função exportada não
+				precisa ser seguido na hora da importação, pode ser usado
+				qualquer nome. A importação é sempre feita com `import ... from
+				'path/to/file'` (sem chaves). A exportação pode ser feita de
+				duas formas:
+			</li>
+			<ul>
+				<li>
+					- Inline: na mesma linha da declaração da variável/função,
+					utilizando `export default = ...` ou `export default
+					function ...`.
+				</li>
+				<li>
+					- Não-inline: após a declaração da variável/função e
+					utilizando `export { ... }` (com chaves).
+				</li>
+			</ul>
+		</ul>
+		<p>
+			- Uma outra diferença ainda mais importante que a possibilidade de
+			renomear o módulo importado é que os exports nomeados podem ser
+			usados várias vezes no mesmo arquivo, enquanto o export default é
+			apenas um por arquivo.
+		</p>
+	</body>
+</html>
